@@ -4,4 +4,4 @@ The purpose of this repo is to demonstrate the [differences](https://docs.solidi
 
 ### How to use
 
-To demonstrate these differences, you will need to run the test with and without `via-ir` enabled. You can configure this in the [`foundry.toml`](./foundry.toml).
+This repo is configured with `via-ir` enabled by default so to run the IR specific tests, run the command `forge test --match-test "WithIr"`. To test it without IR, you need to disable `via_ir` in the [`foundry.toml`](./foundry.toml) and run the command `forge test --match-test "NoIr"`.
