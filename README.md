@@ -1,66 +1,7 @@
-## Foundry
+## IR vs Old Codegen
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+The purpose of this repo is to demonstrate the [differences](https://docs.soliditylang.org/en/latest/ir-breaking-changes.html) that come with using the IR codegen. Most of these changes are sementic only however, it may potentially be hiding new and different behaviour in the code. You wouldn't want to be caught with your pants down when your code is deployed on mainnet so it's better to err on the side of caution and be aware of these potential gotchas before you use the IR codegen. 
 
-Foundry consists of:
+### How to use
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+To demonstrate these differences, you will need to run the test with and without `via-ir` enabled. You can configure this in the [`foundry.toml`](./foundry.toml).
